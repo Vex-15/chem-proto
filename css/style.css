@@ -1,0 +1,239 @@
+/* Global Reset & Typography */
+:root {
+    --primary: #0056b3;       /* Scientific Blue */
+    --secondary: #00a8cc;     /* Cyan Accent */
+    --dark: #2c3e50;          /* Dark Slate */
+    --light: #f8f9fa;         /* Lab White */
+    --white: #ffffff;
+    --border: #e9ecef;
+    --shadow: 0 4px 6px rgba(0,0,0,0.05);
+    --hover-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* Layout Utilities */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.grid-auto { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+
+/* Navigation */
+header {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--dark);
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary);
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    bottom: 0;
+    left: 0;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--white);
+    padding: 60px 0;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 20px;
+}
+
+.hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+.hero p { font-size: 1.2rem; opacity: 0.9; font-weight: 300; }
+
+/* Cards & Sections */
+.section-title {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid var(--secondary);
+    padding-left: 15px;
+}
+
+.card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+    border-color: var(--secondary);
+}
+
+.card h3 { margin-bottom: 1rem; color: var(--dark); }
+
+/* Components */
+.step-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.badge {
+    background: #e3f2fd;
+    color: var(--primary);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Gallery */
+.gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.03);
+}
+
+/* Video */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Simplified for this demo */
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2rem; }
+}
+/* Add this to css/style.css */
+
+/* --- Fix for Photos Page --- */
+
+/* 1. Style the container (the white box) */
+.figure-card {
+    background: var(--white);
+    padding: 15px;              /* Space inside the card */
+    border-radius: 12px;        /* Rounded corners */
+    box-shadow: var(--shadow);  /* Drop shadow */
+    border: 1px solid var(--border);
+    text-align: center;         /* Center the caption */
+    overflow: hidden;           /* Keeps everything inside rounded corners */
+}
+
+/* 2. Style the image (The crop) */
+.figure-card img {
+    width: 100%;            /* Force image to fit the card width */
+    height: 300px;          /* Fixed height to keep the grid neat */
+    
+    /* CHANGE THIS: 'contain' ensures the WHOLE image is visible */
+    object-fit: contain;    
+    
+    object-position: center;/* Focus on center of image */
+    background-color: #f0f0f0; /* Adds a light gray background to fill empty space */
+    border-radius: 8px;     /* Rounded corners on the image itself */
+    margin-bottom: 10px;    /* Space between image and text */
+    display: block;         /* Fixes alignment glitches */
+}
+
+/* 3. Style the Caption text */
+.figure-card figcaption {
+    font-size: 0.9rem;
+    color: var(--dark);
+    font-weight: 500;
+}
+
