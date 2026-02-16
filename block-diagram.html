@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Block Diagram | Chemistry Prototype</title>
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* Page-specific styling for high-quality diagram display */
+      .diagram-box {
+        background-color: #ffffff;
+        padding: 2rem;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        margin-bottom: 2rem;
+      }
+      .diagram-box img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+      }
+      .diagram-box img:hover {
+        transform: scale(1.02);
+      }
+      .figure-caption {
+        margin-top: 1.5rem;
+        font-style: italic;
+        color: var(--text-light);
+        font-size: 0.9rem;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -14,10 +41,11 @@
           <li><a href="index.html">Abstract</a></li>
           <li><a href="ingredients.html">Ingredients</a></li>
           <li><a href="procedure.html">Procedure</a></li>
+          <li><a href="animation.html">Animation</a></li>
           <li><a href="block-diagram.html" class="active">Diagram</a></li>
           <li><a href="photos.html">Photos</a></li>
           <li><a href="video.html">Video</a></li>
-          <li><a href="application.html">Analysis</a></li>
+          <li><a href="applications.html">Analysis</a></li>
         </ul>
       </nav>
     </header>
@@ -25,27 +53,24 @@
     <main class="container">
       <h1>Process Flow Diagram</h1>
       <p>
-        The following visual representation illustrates the sequential stages of
-        the formulation process.
+        The following visual documentation illustrates the sequential stages and
+        system architecture involved in the hand sanitizer formulation process.
       </p>
 
-      <section class="card" style="text-align: center; margin: 2rem 0">
-        <div
-          style="
-            background-color: #f0f4f8;
-            padding: 3rem;
-            border: 2px dashed #cbd5e0;
-            color: #718096;
-          "
-        >
-          <p><strong>[ Insert Block Diagram Image Here ]</strong></p>
-          <p>
-            Input (Raw Materials) &rarr; Mixing &rarr; Dilution &rarr; Bottling
-            &rarr; Quarantine
-          </p>
+      [Image of hand sanitizer manufacturing process flow chart]
+
+      <section class="diagram-box">
+        <div style="margin-bottom: 30px">
+          <img src="images/block_diagram.png" alt="Primary Block Diagram" />
         </div>
-        <p style="margin-top: 1rem; font-style: italic; color: #718096">
-          Figure 1.1: System Block Diagram
+
+        <div>
+          <img src="images/diagram.png" alt="Detailed Process Flow" />
+        </div>
+
+        <p class="figure-caption">
+          Figure 1.1: Comprehensive System Block Diagram and Chemical Process
+          Flow
         </p>
       </section>
 
@@ -54,21 +79,22 @@
           <h3>Stage 1: Input</h3>
           <p>
             Collection and precise measurement of raw reagents (Alcohol, H2O2,
-            Glycerol) based on stoichiometric calculations.
+            Glycerol) based on stoichiometric calculations for a 100 mL batch.
           </p>
         </div>
         <div class="card">
           <h3>Stage 2: Processing</h3>
           <p>
             Controlled mixing in a sterile vessel. The order of addition is
-            critical to prevent adverse reactions and ensure solubility.
+            critical to ensure proper solubility and to prevent adverse chemical
+            reactions.
           </p>
         </div>
         <div class="card">
           <h3>Stage 3: Output</h3>
           <p>
-            Transfer to dispensing units and mandatory 72-hour quarantine to
-            ensure the final product is spore-free.
+            Transfer to dispensing units followed by a mandatory 72-hour
+            quarantine period to ensure the final prototype is spore-free.
           </p>
         </div>
       </div>
@@ -79,4 +105,3 @@
     </footer>
   </body>
 </html>
-
